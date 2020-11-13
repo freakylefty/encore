@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4BBDA0A4-008E-4DE8-827B-A251585548A5}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Encore</RootNamespace>
-    <AssemblyName>Encore</AssemblyName>
+    <ProjectGuid>{D60F0F1C-314F-4013-81E1-F6BF174140D1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ConsoleUI</RootNamespace>
+    <AssemblyName>ConsoleUI</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -35,7 +33,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,35 +41,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\RandomBigInteger.cs" />
-    <Compile Include="Formatter\AbstractFormatter.cs" />
-    <Compile Include="Formatter\Formatters.cs" />
-    <Compile Include="Formatter\IFormatter.cs" />
-    <Compile Include="Formatter\LetterFormatter.cs" />
-    <Compile Include="Formatter\ScientificFormatter.cs" />
-    <Compile Include="Formatter\SimpleFormatter.cs" />
-    <Compile Include="Game.cs" />
-    <Compile Include="Model\Bus\Null.cs" />
-    <Compile Include="Model\Bus\Add.cs" />
-    <Compile Include="Model\Bus\Multiply.cs" />
-    <Compile Include="Model\Bus\IBus.cs" />
-    <Compile Include="Model\Config.cs" />
-    <Compile Include="Model\Context.cs" />
-    <Compile Include="Model\Core.cs" />
-    <Compile Include="Model\GameState.cs" />
-    <Compile Include="Model\TextList.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Elements\AbstractElement.cs" />
+    <Compile Include="Elements\ActionButton.cs" />
+    <Compile Include="Elements\Header.cs" />
+    <Compile Include="Elements\MessageList.cs" />
+    <Compile Include="Elements\Text.cs" />
+    <Compile Include="Elements\IConsoleElement.cs" />
+    <Compile Include="Elements\Spinner.cs" />
+    <Compile Include="Model\Align.cs" />
+    <Compile Include="Model\Decoration.cs" />
+    <Compile Include="Model\Point.cs" />
+    <Compile Include="Theme.cs" />
+    <Compile Include="UI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
-    <ProjectReference Include="..\ConsoleUI\ConsoleUI.csproj">
-      <Project>{d60f0f1c-314f-4013-81e1-f6bf174140d1}</Project>
-      <Name>ConsoleUI</Name>
-    </ProjectReference>
+    <Compile Include="Utility\ConsoleUtil.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
